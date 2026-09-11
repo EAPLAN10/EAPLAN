@@ -1,6 +1,1183 @@
-:root{--black:#17130f;--black2:#241b14;--gold:#cda46b;--gold2:#f1d19a;--ivory:#f7f2e9;--paper:#fffdf8;--ink:#211d18;--muted:#7c746b;--line:#e7dfd4;--radius:22px}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--ivory);color:var(--ink)}button,input,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
-/* splash */.splash{position:fixed;inset:0;z-index:100;background:#090806;overflow:hidden;display:grid;place-items:center}.splash img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.62) contrast(1.08) saturate(.88);animation:slowZoom 4s ease-out forwards}.splash:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.12) 45%,rgba(0,0,0,.68))}.splash .content{position:relative;z-index:2;text-align:center;color:white;padding:20px;margin-top:35vh;animation:fadeUp 1.2s ease-out}.splash .logo{width:min(160px,35vw);height:auto;filter:drop-shadow(0 8px 24px #0008);margin:auto;display:block}.splash .word{font-family:Georgia,serif;letter-spacing:8px;font-size:clamp(26px,7vw,46px);margin:8px 0 4px}.splash .tag{font-size:11px;letter-spacing:2.6px;color:#ead8bc}.splash.hide{animation:fadeOut .7s forwards;pointer-events:none}@keyframes slowZoom{from{transform:scale(1.02)}to{transform:scale(1.08)}}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes fadeOut{to{opacity:0}}
-/* welcome/auth */.authShell{min-height:100vh;background:var(--black);color:white;display:grid;grid-template-columns:1.05fr .95fr}.authVisual{position:relative;min-height:100vh;overflow:hidden}.authVisual img{width:100%;height:100%;object-fit:cover;filter:brightness(.48) saturate(.8)}.authVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.05),rgba(23,19,15,.82))}.visualText{position:absolute;z-index:2;left:8%;right:12%;bottom:10%;max-width:520px}.visualText .ey{color:var(--gold2);letter-spacing:3px;font-size:11px}.visualText h1{font:500 clamp(38px,5vw,68px)/1.02 Georgia,serif;margin:14px 0}.visualText p{color:#d6cec3;line-height:1.7}.authPanel{display:flex;align-items:center;justify-content:center;padding:36px}.authBox{width:min(440px,100%)}.miniLogo{width:58px;height:58px;object-fit:contain;margin-bottom:18px}.brandText{font-weight:800;letter-spacing:4px}.authBox h2{font:500 36px Georgia,serif;margin:10px 0}.sub{color:#aaa198;line-height:1.6}.form{display:grid;gap:12px;margin-top:24px}.label{font-size:12px;color:#c8beb3;margin:3px 0}.input{width:100%;padding:14px 15px;border:1px solid #493d31;background:#211b16;color:white;border-radius:13px;outline:none}.input:focus{border-color:var(--gold)}.goldBtn{border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(135deg,#cda46b,#efd19c);color:#1d160f;font-weight:800}.ghostBtn{border:1px solid #4b4036;border-radius:13px;padding:13px 18px;background:transparent;color:white}.switch{color:#aaa198;text-align:center;font-size:13px;margin-top:18px}.link{color:var(--gold2);background:none;border:0;padding:0}.error{color:#e7a39a;font-size:12px}.onboard{min-height:100vh;background:radial-gradient(circle at top,#3a2a1c,#17130f 45%);color:white;display:grid;place-items:center;padding:24px}.onboardBox{width:min(620px,100%);background:#211b16;border:1px solid #493d31;border-radius:28px;padding:28px}.steps{display:flex;gap:6px;margin:18px 0 26px}.steps i{height:4px;flex:1;backg
-round:#4a3d31;border-radius:9px}.steps i.active{background:var(--gold)}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}.choice{border:1px solid #4b4036;border-radius:14px;padding:14px;background:#1b1713;color:#ddd;text-align:left}.choice.selected{border-color:var(--gold);background:#2a2119;color:#fff}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}
-/* app */.appShell{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.side{background:var(--black);color:white;padding:28px 16px;position:sticky;top:0;height:100vh}.sideBrand{display:flex;align-items:center;gap:10px;padding:0 10px 28px}.sideBrand img{width:34px;height:34px;object-fit:contain}.sideBrand span{letter-spacing:3px;font-weight:800}.nav{display:grid;gap:6px}.nav button{background:transparent;border:0;color:#aaa197;padding:13px 14px;border-radius:13px;text-align:left}.nav button.active,.nav button:hover{background:#2d251e;color:white}.main{max-width:1180px;width:100%;padding:32px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.kicker{font-size:11px;color:var(--gold);letter-spacing:2px}.top h2{margin:5px 0 0;font:500 30px Georgia,serif}.avatar{width:44px;height:44px;border-radius:50%;background:#e4d6c2;color:#32261b;display:grid;place-items:center;font-weight:800}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{grid-column:span 4;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 14px 40px #241b1408}.wide{grid-column:span 8}.full{grid-column:span 12}.card h3{margin:0 0 8px}.muted{color:var(--muted);line-height:1.65}.metric{font-size:34px;font-weight:800}.progress{height:8px;background:#eee6da;border-radius:20px;overflow:hidden;margin:16px 0}.progress i{display:block;height:100%;width:42%;background:var(--gold);border-radius:20px}.item{border:1px solid var(--line);padding:13px;border-radius:14px;background:#fff;margin-top:9px}.mobileNav{display:none}.section{display:none}.section.active{display:block}
-@media(max-width:800px){.authShell{display:block}.authVisual{display:none}.authPanel{min-height:100vh;padding:24px;background:radial-gradient(circle at top,#3a2a1c,#17130f 50%)}.appShell{display:block}.side{display:none}.main{padding:18px 16px 95px}.grid{grid-template-columns:1fr}.card,.wide,.full{grid-column:span 1}.mobileNav{display:flex;position:fixed;z-index:30;left:0;right:0;bottom:0;background:#fffdf9;border-top:1px solid var(--line);justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}.mobileNav button{border:0;background:none;color:var(--muted);font-size:10px;display:grid;justify-items:center;gap:3px}.mobileNav button.active{color:var(--ink);font-weight:800}.mobileNav b{font-size:18px}.choices{grid-template-columns:1fr}.splash .content{margin-top:42vh}}
+const A='/public/assets/';
+const app=document.querySelector('#app');
+
+const nav=[
+  ['home','⌂','Beranda'],
+  ['planning','☷','Planning'],
+  ['goals','◎','Goals'],
+  ['journal','✎','Journal'],
+  ['ideas','✦','Ideas'],
+  ['projects','□','Projects'],
+  ['journey','↗','Journey']
+];
+
+let state={
+  user:JSON.parse(localStorage.getItem('ea_user')||'null'),
+  selected:[],
+  onStep:1,
+  active:'home'
+};
+
+
+/* =========================
+   BACKGROUND STYLE
+========================= */
+
+(function injectBackgroundStyles(){
+
+  const style=document.createElement('style');
+
+  style.textContent=`
+
+    .ea-bg-page{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      isolation:isolate;
+      color:white;
+    }
+
+    .ea-bg-page::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+
+      background:
+        linear-gradient(
+          rgba(10,8,6,.58),
+          rgba(10,8,6,.68)
+        ),
+        url("${A}splash.jpg")
+        center center/cover
+        no-repeat;
+
+      transform:translateZ(0);
+    }
+
+    .ea-bg-page::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:rgba(0,0,0,.12);
+      pointer-events:none;
+    }
+
+    .ea-bg-page .authBox,
+    .ea-bg-page .onboardBox{
+      background:rgba(20,16,12,.72);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .ea-bg-page .appShell{
+      background:transparent !important;
+    }
+
+    .ea-bg-page .main{
+      background:transparent !important;
+    }
+
+    .ea-bg-page .card{
+      background:rgba(20,16,12,.70);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+    }
+
+    .ea-bg-page .side,
+    .ea-bg-page .top,
+    .ea-bg-page .mobileNav{
+      background:rgba(15,12,10,.76);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .authVisual{
+      background-image:url("${A}splash.jpg") !important;
+      background-size:cover !important;
+      background-position:center !important;
+      background-repeat:no-repeat !important;
+    }
+
+  `;
+
+  document.head.appendChild(style);
+
+})();
+
+
+/* =========================
+   SPLASH / WELCOME AWAL
+========================= */
+
+function splash(){
+
+  app.innerHTML=`
+
+    <div class="splash">
+
+      <img
+        class="bg"
+        src="${A}splash.jpg"
+        alt=""
+      >
+
+      <div class="content">
+
+        <img
+          class="logo"
+          src="${A}logoea.png"
+          alt="EA PLAN"
+        >
+
+        <div class="tag">
+          YOUR PERSONALIZED PLANNING JOURNEY
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  /*
+    SPLASH TAMPIL SELAMA 3 DETIK
+  */
+
+  setTimeout(()=>{
+
+    const splashScreen=
+      document.querySelector('.splash');
+
+    if(splashScreen){
+
+      /*
+        MULAI FADE OUT
+      */
+
+      splashScreen.classList.add('hide');
+
+
+      /*
+        TUNGGU TRANSITION SELESAI
+        BARU PINDAH KE HALAMAN SELANJUTNYA
+      */
+
+      setTimeout(()=>{
+
+        if(state.user){
+          dashboard();
+        }else{
+          welcome();
+        }
+
+      },700);
+
+    }else{
+
+      if(state.user){
+        dashboard();
+      }else{
+        welcome();
+      }
+
+    }
+
+  },3000);
+
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+function welcome(){
+
+  app.innerHTML=`
+
+    <div class="authShell">
+
+      <div class="authVisual">
+
+        <img
+          src="${A}splash.jpg"
+          alt=""
+        >
+
+        <div class="visualText">
+
+          <div class="ey">
+            PLAN · CREATE · REFLECT · GROW
+          </div>
+
+          <h1>
+            Rancang hidupmu.<br>
+            Rawat perjalananmu.
+          </h1>
+
+          <p>
+            Ruang untuk merencanakan langkah,
+            menyimpan ide, menulis cerita,
+            mengelola proyek, dan melihat
+            pertumbuhan dari waktu ke waktu.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="authPanel">
+
+        <div class="authBox">
+
+          <img
+            class="miniLogo"
+            src="${A}logoea.png"
+            alt="EA PLAN"
+          >
+
+          <div class="brandText">
+            EA PLAN
+          </div>
+
+          <h2>
+            Mulai perjalananmu.
+          </h2>
+
+          <p class="sub">
+            Satu langkah kecil hari ini dapat
+            menjadi bagian dari karya besar esok hari.
+          </p>
+
+          <div class="form">
+
+            <button
+              class="goldBtn"
+              onclick="register()"
+            >
+              Buat Akun
+            </button>
+
+            <button
+              class="ghostBtn"
+              onclick="login()"
+            >
+              Sudah punya akun? Masuk
+            </button>
+
+          </div>
+
+          <p class="switch">
+            Dengan melanjutkan, kamu menyetujui
+            ruang privat dan publik EA PLAN
+            yang akan dijelaskan saat akun dibuat.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+}
+
+
+/* =========================
+   REGISTER / LOGIN
+========================= */
+
+function register(){
+  auth('register');
+}
+
+function login(){
+  auth('login');
+}
+
+
+/* =========================
+   AUTH PAGE
+========================= */
+
+function auth(mode){
+
+  const reg=mode==='register';
+
+  app.innerHTML=`
+
+    <div
+      class="authPanel ea-bg-page"
+      style="min-height:100vh;color:white"
+    >
+
+      <div class="authBox">
+
+        <img
+          class="miniLogo"
+          src="${A}logoea.png"
+          alt="EA PLAN"
+        >
+
+        <div class="brandText">
+          EA PLAN
+        </div>
+
+        <h2>
+          ${
+            reg
+            ?'Buat akun.'
+            :'Selamat datang kembali.'
+          }
+        </h2>
+
+        <p class="sub">
+          ${
+            reg
+            ?'Buat ruang perjalanan pribadimu.'
+            :'Masuk untuk melanjutkan perjalananmu.'
+          }
+        </p>
+
+
+        <form
+          class="form"
+          onsubmit="submitAuth(event,'${mode}')"
+        >
+
+          ${
+            reg
+            ?`
+              <input
+                class="input"
+                id="name"
+                placeholder="Nama"
+                required
+              >
+
+              <input
+                class="input"
+                id="username"
+                placeholder="Username"
+                required
+              >
+            `
+            :''
+          }
+
+
+          <input
+            class="input"
+            id="email"
+            type="email"
+            placeholder="Email"
+            required
+          >
+
+
+          <input
+            class="input"
+            id="password"
+            type="password"
+            placeholder="Password"
+            minlength="6"
+            required
+          >
+
+
+          <div
+            id="err"
+            class="error"
+          ></div>
+
+
+          <button
+            class="goldBtn"
+          >
+            ${reg?'Buat Akun':'Masuk'}
+          </button>
+
+        </form>
+
+
+        <div class="switch">
+
+          <button
+            class="link"
+            onclick="welcome()"
+          >
+            ← Kembali
+          </button>
+
+          ·
+
+          <button
+            class="link"
+            onclick="forgot()"
+          >
+            Lupa password?
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   SUBMIT AUTH
+========================= */
+
+function submitAuth(e,mode){
+
+  e.preventDefault();
+
+  if(mode==='register'){
+
+    state.user={
+      name:name.value,
+      username:username.value,
+      email:email.value
+    };
+
+    localStorage.setItem(
+      'ea_user',
+      JSON.stringify(state.user)
+    );
+
+    onboarding();
+
+  }else{
+
+    let u=JSON.parse(
+      localStorage.getItem('ea_user')||'null'
+    );
+
+    if(!u || u.email!==email.value){
+
+      err.textContent=
+        'Demo: akun belum ditemukan. Silakan buat akun terlebih dahulu.';
+
+      return;
+    }
+
+    state.user=u;
+
+    dashboard();
+
+  }
+
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+function forgot(){
+
+  app.innerHTML=`
+
+    <div
+      class="authPanel ea-bg-page"
+      style="min-height:100vh;color:white"
+    >
+
+      <div class="authBox">
+
+        <img
+          class="miniLogo"
+          src="${A}logoea.png"
+          alt="EA PLAN"
+        >
+
+        <div class="brandText">
+          EA PLAN
+        </div>
+
+        <h2>
+          Reset password.
+        </h2>
+
+        <p class="sub">
+          Masukkan email untuk proses pemulihan akun.
+          Email service akan disambungkan pada fase backend.
+        </p>
+
+
+        <form
+          class="form"
+          onsubmit="
+            event.preventDefault();
+            alert('Fitur email reset akan aktif setelah authentication backend disambungkan.');
+            login()
+          "
+        >
+
+          <input
+            class="input"
+            type="email"
+            placeholder="Email"
+            required
+          >
+
+          <button
+            class="goldBtn"
+          >
+            Kirim instruksi
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   ONBOARDING
+========================= */
+
+function onboarding(){
+
+  state.onStep=1;
+
+  renderOnboarding();
+
+}
+
+
+function renderOnboarding(){
+
+  let steps=[
+    'Fokus',
+    'Tentangmu',
+    'Target'
+  ];
+
+  let body;
+
+
+  if(state.onStep===1){
+
+    body=`
+
+      <div class="kicker">
+        LANGKAH 1
+      </div>
+
+      <h2>
+        Apa yang ingin kamu kembangkan?
+      </h2>
+
+      <p class="sub">
+        Pilih yang paling dekat dengan perjalananmu.
+        Kamu bisa memilih lebih dari satu.
+      </p>
+
+
+      <div class="choices">
+
+        ${
+          [
+            'Karya',
+            'Bisnis',
+            'Karier',
+            'Pendidikan',
+            'Kehidupan',
+            'Kreativitas'
+          ]
+          .map(x=>`
+
+            <button
+              class="
+                choice
+                ${
+                  state.selected.includes(x)
+                  ?'selected'
+                  :''
+                }
+              "
+              onclick="pick('${x}')"
+            >
+
+              ${
+                state.selected.includes(x)
+                ?'✓ '
+                :'○ '
+              }
+
+              ${x}
+
+            </button>
+
+          `)
+          .join('')
+        }
+
+      </div>
+
+    `;
+
+  }else if(state.onStep===2){
+
+    body=`
+
+      <div class="kicker">
+        LANGKAH 2
+      </div>
+
+      <h2>
+        Ceritakan sedikit tentangmu.
+      </h2>
+
+      <p class="sub">
+        Bagian ini opsional.
+        Profil dapat kamu ubah nanti.
+      </p>
+
+
+      <textarea
+        class="input"
+        id="bio"
+        rows="6"
+        placeholder="Apa yang sedang kamu perjuangkan atau bangun?"
+      ></textarea>
+
+    `;
+
+  }else{
+
+    body=`
+
+      <div class="kicker">
+        LANGKAH 3
+      </div>
+
+      <h2>
+        Apa target utamamu?
+      </h2>
+
+      <p class="sub">
+        Kita mulai dari satu target
+        yang benar-benar berarti.
+      </p>
+
+
+      <input
+        class="input"
+        id="firstGoal"
+        placeholder="Contoh: menyelesaikan karya pertama saya"
+      >
+
+    `;
+
+  }
+
+
+  app.innerHTML=`
+
+    <div class="onboard ea-bg-page">
+
+      <div class="onboardBox">
+
+        <div class="brandText">
+          EA PLAN
+        </div>
+
+
+        <div class="steps">
+
+          ${
+            steps
+            .map((_,i)=>`
+
+              <i
+                class="${
+                  i+1<=state.onStep
+                  ?'active'
+                  :''
+                }"
+              ></i>
+
+            `)
+            .join('')
+          }
+
+        </div>
+
+
+        ${body}
+
+
+        <div class="actions">
+
+          ${
+            state.onStep>1
+            ?`
+              <button
+                class="ghostBtn"
+                onclick="
+                  state.onStep--;
+                  renderOnboarding()
+                "
+              >
+                Kembali
+              </button>
+            `
+            :''
+          }
+
+
+          <button
+            class="goldBtn"
+            onclick="nextOnboard()"
+          >
+
+            ${
+              state.onStep<3
+              ?'Lanjut'
+              :'Masuk ke EA PLAN'
+            }
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   PICK ONBOARDING
+========================= */
+
+function pick(x){
+
+  state.selected=
+    state.selected.includes(x)
+    ?state.selected.filter(y=>y!==x)
+    :[...state.selected,x];
+
+  renderOnboarding();
+
+}
+
+
+/* =========================
+   NEXT ONBOARDING
+========================= */
+
+function nextOnboard(){
+
+  if(state.onStep<3){
+
+    state.onStep++;
+
+    renderOnboarding();
+
+  }else{
+
+    dashboard();
+
+  }
+
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+function dashboard(){
+
+  state.active='home';
+
+  renderApp();
+
+}
+
+
+/* =========================
+   RENDER APP
+========================= */
+
+function renderApp(){
+
+  let n=
+    nav.find(x=>x[0]===state.active)
+    ||nav[0];
+
+  let content=
+    state.active==='home'
+    ?home()
+    :modulePage(n[1],n[2]);
+
+
+  app.innerHTML=`
+
+    <div class="ea-bg-page">
+
+      <div class="appShell">
+
+        <aside class="side">
+
+          <div class="sideBrand">
+
+            <img
+              src="${A}logoea.png"
+              alt="EA PLAN"
+            >
+
+            <span>
+              EA PLAN
+            </span>
+
+          </div>
+
+
+          <nav class="nav">
+
+            ${
+              nav
+              .map(x=>`
+
+                <button
+                  class="${
+                    x[0]===state.active
+                    ?'active'
+                    :''
+                  }"
+                  onclick="go('${x[0]}')"
+                >
+
+                  ${x[1]}
+                  &nbsp;&nbsp;
+                  ${x[2]}
+
+                </button>
+
+              `)
+              .join('')
+            }
+
+          </nav>
+
+        </aside>
+
+
+        <main class="main">
+
+          <header class="top">
+
+            <div>
+
+              <div class="kicker">
+                RUANG PERJALANAN
+              </div>
+
+              <h2>
+                ${n[2]}
+              </h2>
+
+            </div>
+
+
+            <div class="avatar">
+
+              ${
+                (state.user?.name||'EA')
+                .slice(0,2)
+                .toUpperCase()
+              }
+
+            </div>
+
+          </header>
+
+
+          ${content}
+
+        </main>
+
+
+        <nav class="mobileNav">
+
+          ${
+            nav
+            .slice(0,5)
+            .map(x=>`
+
+              <button
+                class="${
+                  x[0]===state.active
+                  ?'active'
+                  :''
+                }"
+                onclick="go('${x[0]}')"
+              >
+
+                <b>
+                  ${x[1]}
+                </b>
+
+                ${x[2]}
+
+              </button>
+
+            `)
+            .join('')
+          }
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function home(){
+
+  return `
+
+    <div class="grid">
+
+      <article class="card wide">
+
+        <div class="kicker">
+          SELAMAT DATANG,
+          ${(state.user?.name||'KREATOR').toUpperCase()}
+        </div>
+
+
+        <h1
+          style="
+            font:500 42px Georgia,serif;
+            margin:12px 0
+          "
+        >
+          Rancang hidupmu.<br>
+          Rawat perjalananmu.
+        </h1>
+
+
+        <p class="muted">
+          “Setiap karya besar berawal dari satu
+          langkah kecil yang terencana.”
+        </p>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="kicker">
+          PROGRESS
+        </div>
+
+        <div class="metric">
+          0%
+        </div>
+
+        <div class="progress">
+
+          <i style="width:0"></i>
+
+        </div>
+
+        <span class="muted">
+          Belum ada target terselesaikan.
+        </span>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="kicker">
+          TARGET AKTIF
+        </div>
+
+        <div class="metric">
+          0
+        </div>
+
+        <span class="muted">
+          Mulai dari satu target utama.
+        </span>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="kicker">
+          PROJECTS
+        </div>
+
+        <div class="metric">
+          0
+        </div>
+
+        <span class="muted">
+          Ruang karya akan tumbuh di sini.
+        </span>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="kicker">
+          JOURNAL
+        </div>
+
+        <div class="metric">
+          0
+        </div>
+
+        <span class="muted">
+          Catatan perjalananmu.
+        </span>
+
+      </article>
+
+
+      <article class="card full">
+
+        <h3>
+          Langkah hari ini
+        </h3>
+
+
+        <div class="item">
+          ○ Tentukan satu prioritas utama
+        </div>
+
+
+        <div class="item">
+          ○ Kerjakan tanpa menunggu semuanya sempurna
+        </div>
+
+
+        <div class="item">
+          ○ Tulis satu hal yang kamu pelajari
+        </div>
+
+      </article>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   MODULE PAGE
+========================= */
+
+function modulePage(a,b){
+
+  return `
+
+    <div class="grid">
+
+      <article class="card full">
+
+        <div class="kicker">
+          EA PLAN
+        </div>
+
+
+        <h1
+          style="
+            font:500 40px Georgia,serif
+          "
+        >
+          ${b}
+        </h1>
+
+
+        <p class="muted">
+
+          ${
+            a==='Planning'
+            ?'Susun langkah dengan sederhana.'
+            :a==='Goals'
+            ?'Ubah mimpi menjadi target yang terukur.'
+            :a==='Journal'
+            ?'Tulis apa yang terjadi, dirasakan, dan dipelajari.'
+            :a==='Ideas'
+            ?'Tangkap ide sebelum hilang.'
+            :a==='Projects'
+            ?'Pecah karya besar menjadi tahapan kecil.'
+            :'Lihat milestone dan pertumbuhanmu dari waktu ke waktu.'
+          }
+
+        </p>
+
+
+        <div class="item">
+
+          Modul ini sudah memiliki tempat
+          di arsitektur production EA PLAN.
+          CRUD + cloud database akan diaktifkan
+          pada fase berikutnya.
+
+        </div>
+
+      </article>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function go(id){
+
+  state.active=id;
+
+  renderApp();
+
+}
+
+
+/* =========================
+   START APP
+========================= */
+
+splash();
